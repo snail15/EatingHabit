@@ -37,9 +37,8 @@ public class EatingDbHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public void deleteDatabase(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("DELETE FROM " + EatingEntry.TABLE_NAME);
-        onCreate(sqLiteDatabase);
+    public void deleteDatabase(Context context, SQLiteDatabase sqLiteDatabase) {
+        context.deleteDatabase(sqLiteDatabase);
     }
 
 }
